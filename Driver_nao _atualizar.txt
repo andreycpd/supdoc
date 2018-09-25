@@ -1,0 +1,10 @@
+//COSO NECESSARIO MANTER UM DRIVER SEMPRE NA MESMA VERSAO
+
+A solução para o antigo PL-2303 HXA / X: use um release de driver mais antigo que o 3.4.
+
+Edit: O procedimento acima funciona, mas apenas temporário. Sempre que você desligar o computador, o driver mais recente é recarregado devido à atualização automática do Windows (ou se você desconectar e conectar novamente o dispositivo à porta USB). 
+
+Para evitar isso, existe uma reviravolta recente e foi publicada pela Microsoft. É uma ferramenta chamada wushowhide.diagcab ("Mostrar e ocultar atualização"). Permite inibir a atualização automática de um determinado programa ou driver. 
+Para mais informações e onde baixar essa ferramenta, dê uma olhada neste artigo: KB3073930(https://support.microsoft.com/en-us/help/3073930/how-to-temporarily-prevent-a-driver-update-from-reinstalling-in-window)
+
+Eu testei e funciona bem. O único problema é recarregar o driver mais recente quando você conecta o dispositivo a uma porta USB nunca usada. Portanto, se você alterar o local de conexão, deverá definir manualmente o driver para 3.3, mas será necessário fazer isso apenas na primeira vez em que usou essa porta. Na próxima vez, o driver permanecerá em 3.3 e nunca fará upgrade para 3.6.
